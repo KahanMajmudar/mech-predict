@@ -18,7 +18,7 @@ class APIClients:
         if not all([self.openai_api_key, self.perplexity_api_key]):
             raise ValueError("Missing required API keys")
 
-        self.openai_client = OpenAI(api_key=self.openai_api_key[0])
+        self.openai_client = OpenAI(api_key=self.openai_api_key)
         self.perplexity_client = OpenAI(
             api_key=self.perplexity_api_key, base_url="https://api.perplexity.ai"
         )
@@ -206,7 +206,7 @@ CRITICAL UNCERTAINTIES:
 - [Key risk factor 3]"""
 
 
-# @with_key_rotation
+@with_key_rotation
 def run(**kwargs) -> MechResponse:
     """Run the task"""
     # Initialize API clients
