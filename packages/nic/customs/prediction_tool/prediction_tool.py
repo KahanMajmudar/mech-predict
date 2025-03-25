@@ -1,13 +1,9 @@
-from typing import Dict, List, Tuple, Optional, Any
+from typing import Dict, Tuple, Optional, Any
 from datetime import datetime
 from openai import OpenAI
-from dotenv import load_dotenv
 import functools
 
 MechResponse = Tuple[str, Optional[str], Optional[Dict[str, Any]], Any, Any]
-
-# Load environment variables
-load_dotenv()
 
 
 class APIClients:
